@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>»ç´Ù¸® °ÔÀÓ</title>
+<title>ì‚¬ë‹¤ë¦¬ ê²Œì„</title>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <script language="javascript" type="text/javascript">
 var Yl = {
@@ -12,7 +12,7 @@ var Yl = {
   if (document.getElementById) return document.getElementById(strId); 
   if (document.all) return document.all[strId];
  }
- //div ¸®ÅÏ
+ //div ë¦¬í„´
  ,getDiv : function(sWidth, sHeight, sBgColor){
   var d = document.createElement("div");
   if(sWidth) d.style.width = sWidth;
@@ -28,31 +28,31 @@ var Yl = {
   ,'#c9a601','#d6006d','#01b6de','#80adaf','#a44201'
   ,'#e0b800','#ec0078','#0021b0','#92b7d7','#013add'
   ]  
- ,arrVerDiv : [] //¼öÁ÷ ¼± div
- ,arrHorDiv : [] //¼öÆò ¼± div
- ,arrMovDiv : [] //ÀÌµ¿ ¼± div
+ ,arrVerDiv : [] //ìˆ˜ì§ ì„  div
+ ,arrHorDiv : [] //ìˆ˜í‰ ì„  div
+ ,arrMovDiv : [] //ì´ë™ ì„  div
  
- ,arrIng : [] //ÁøÇà¿©ºÎ Ã¼Å©¿ë
- ,arrMDiv : [] //ÀÌµ¿¼± ¹è¿­ ¹øÈ£°ª ÀúÀå, ÀÌµ¿ÈÄ È®ÀÎ¿ë
+ ,arrIng : [] //ì§„í–‰ì—¬ë¶€ ì²´í¬ìš©
+ ,arrMDiv : [] //ì´ë™ì„  ë°°ì—´ ë²ˆí˜¸ê°’ ì €ì¥, ì´ë™í›„ í™•ì¸ìš©
   
- //,nMaxWidth : 1000 //ÃÖ°í ³ĞÀÌ
- ,nMaxWidth : 1200 //ÃÖ°í ³ĞÀÌ
- ,nWidth : 0 //»ç´Ù¸® ³ĞÀÌ
- //,nHeight : 300 //»ç´Ù¸® ³ôÀÌ
- ,nHeight : 500 //»ç´Ù¸® ³ôÀÌ
+ //,nMaxWidth : 1000 //ìµœê³  ë„“ì´
+ ,nMaxWidth : 1200 //ìµœê³  ë„“ì´
+ ,nWidth : 0 //ì‚¬ë‹¤ë¦¬ ë„“ì´
+ //,nHeight : 300 //ì‚¬ë‹¤ë¦¬ ë†’ì´
+ ,nHeight : 500 //ì‚¬ë‹¤ë¦¬ ë†’ì´
  
  ,nNum : 0
  
- ,arrTopDiv : [] //Å¾ div
- ,arrBotDiv : [] //¾Æ·¡ div
- ,arrGoDiv : [] //go ¹öÆ° div
+ ,arrTopDiv : [] //íƒ‘ div
+ ,arrBotDiv : [] //ì•„ë˜ div
+ ,arrGoDiv : [] //go ë²„íŠ¼ div
  
  ,init : function(){
   
-  //°¹¼ö
+  //ê°¯ìˆ˜
   this.nNum = parseInt(this.getEl("sel_num").value);
   
-  //³ĞÀÌ
+  //ë„“ì´
   this.nWidth = parseInt(this.nMaxWidth/this.nNum);
         
   for(var i=0; i<this.nNum; i++){
@@ -106,7 +106,7 @@ var Yl = {
   this.getEl("div_step2").style.display = "";  
   
  }
- ,create : function(){ //»ç´Ù¸® »ı¼º
+ ,create : function(){ //ì‚¬ë‹¤ë¦¬ ìƒì„±
     
   for(var i=0; i<this.nNum; i++){
    
@@ -126,7 +126,7 @@ var Yl = {
    this.arrMDiv[i] = [];   
   }
       
-  for(var i=0; i<(this.nNum*7); i++){
+  for(var i=0; i<(this.nNum*7); i++){// 7 Horizon Line for 1 Vertical Line
    
    var nLen = this.arrHorDiv.length;
    
@@ -141,7 +141,7 @@ var Yl = {
    this.getEl("div_body").appendChild(this.arrHorDiv[nLen]);    
   }
   
-  this.getEl("div_step2").innerHTML = "GO ¹öÆ°À» ´­·¯ ÁÖ¼¼¿ä.";
+  this.getEl("div_step2").innerHTML = "GO ë²„íŠ¼ì„ ëˆŒëŸ¬ ì£¼ì„¸ìš”.";
   
  }
  ,sRndTop : ""
@@ -176,7 +176,7 @@ var Yl = {
    
    this.moveStart("y", no, nSx, nSy);
    
-   this.arrIng[no] = true; //ÁøÇà
+   this.arrIng[no] = true; //ì§„í–‰
   }
  
  }
@@ -221,7 +221,7 @@ var Yl = {
     }
    }else{
     
-    //¹İº¹ÇÏ¸é¼­ Å«°ÍÁß¿¡¼­ Á¦ÀÏ ÀÛÀº°ÍÀ¸·Î        
+    //ë°˜ë³µí•˜ë©´ì„œ í°ê²ƒì¤‘ì—ì„œ ì œì¼ ì‘ì€ê²ƒìœ¼ë¡œ        
     if( ny>nSy ){
      if( nx==nEx || (nx+nw)==nEx ){
             
@@ -299,7 +299,7 @@ var Yl = {
     
     for(var i=0; i<this.arrVerDiv.length; i++){
      if(nEx==parseInt(this.arrVerDiv[i].style.left)){      
-      //°á°ú
+      //ê²°ê³¼
       this.arrBotDiv[i].style.display = 'block';
 	  this.arrBotDiv[i].innerHTML = "<b>"+(pno+1)+"</b><br>"+this.arrBotDiv[i].innerHTML;
 	  
@@ -307,7 +307,7 @@ var Yl = {
 	  
 	  //this.getEl("inp_bot_"+i).value;
             
-      this.arrGoDiv[pno].innerHTML = '<input type="button" value="È®ÀÎ" onClick="Yl.start('+pno+')">';
+      this.arrGoDiv[pno].innerHTML = '<input type="button" value="í™•ì¸" onClick="Yl.start('+pno+')">';
       
       break;
      }
@@ -316,11 +316,11 @@ var Yl = {
   }
  }
 };
-//F5 »õ·Î°íÄ§ ¸·±â
+//F5 ìƒˆë¡œê³ ì¹¨ ë§‰ê¸°
 document.onkeydown = function(e){
  if(!e) e = window.event;
  if (e.keyCode == 116){
-  if( confirm("»õ·Î °íÄ§ ÇÏ½Ã°Ú½À´Ï±î?") ){
+  if( confirm("ìƒˆë¡œ ê³ ì¹¨ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") ){
   }else{
    e.keyCode = 0;
    return false;
@@ -336,7 +336,7 @@ document.onkeydown = function(e){
 
 <div id="div_step1" style="font-size:12px;">
  
-°¹¼ö ¼±ÅÃ
+ê°¯ìˆ˜ ì„ íƒ
 <select id="sel_num">
  <option value="2">2</option>
  <option value="3">3</option>
@@ -358,12 +358,12 @@ document.onkeydown = function(e){
  <option value="19">19</option>
  <option value="20">20</option>
 </select>
-°³
-<input type="button" value="¸¸µé±â" onclick="Yl.init();">
+ê°œ
+<input type="button" value="ë§Œë“¤ê¸°" onclick="Yl.init();">
 </div>
 
 <div id="div_step2" style="font-size:12px;display:none;">
- ÀÔ·ÂÈÄ °ÔÀÓ ½ÃÀÛ <input type="button" value="½ÃÀÛ" onclick="Yl.create();">
+ ì…ë ¥í›„ ê²Œì„ ì‹œì‘ <input type="button" value="ì‹œì‘" onclick="Yl.create();">
 </div>
 <!--
 <div id="div_body" style="width:1000px;height:450px;border:1px solid #CCCCCC;position:relative;"></div>
